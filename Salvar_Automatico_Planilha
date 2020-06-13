@@ -1,0 +1,5 @@
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+
+Application.Speech.Speak (Planilha1.Range("A1") & "Não esqueça de salvar a planilha")
+
+End Sub
