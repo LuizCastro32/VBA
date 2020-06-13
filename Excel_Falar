@@ -1,0 +1,7 @@
+Sub Excel_Falar()
+
+Application.Speech.Speak ("Texto desejado")
+
+Application.Speech.Speak (Planilha1.Range("A1") & "Texto desejado")
+
+End Sub
