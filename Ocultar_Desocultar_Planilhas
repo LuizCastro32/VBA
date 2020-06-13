@@ -1,0 +1,24 @@
+Sub Titulo_Barra_Status()
+
+    Application.StatusBar = "Salve a Planilha!"
+    Application.Caption = "Luiz Castro"
+    
+End Sub
+
+Sub Ocultar_Planilha()
+
+    Sheets("Planilha3").Visible = False
+
+End Sub
+
+Sub Desocultar_Planilha()
+
+    Planilha3.Visible = xlSheetVisible
+
+End Sub
+
+Sub Ocultar_Planilha3()
+
+    Planilha3.Visible = xlSheetVeryHidden
+
+End Sub
