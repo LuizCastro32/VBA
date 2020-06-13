@@ -1,0 +1,5 @@
+Sub Limpar_linhas_em_branco()
+
+Planilha1.Range("A:XFD").SpecialCells(xlCellTypeBlanks).Delete
+
+End Sub
