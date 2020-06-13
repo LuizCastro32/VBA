@@ -1,0 +1,9 @@
+Sub Ocutar_Planilhas()
+
+'Exibir e ocultar
+
+Planilha1.Visible = xlSheetVisible
+Planilha2.Visible = xlSheetVeryHidden
+Planilha3.Visible = xlSheetVeryHidden
+
+End Sub
