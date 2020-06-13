@@ -1,0 +1,36 @@
+Sub enviar_email()
+
+Dim Linha As Long
+Dim Nome As String
+Linha = 2
+
+Do While Not IsEmpty(Range("A" & Linha))
+If Cells(Linha, 1) = "Sim" Then
+Nome = Cells(Linha, 2).Value
+
+Set objeto_outlook = CreateObject("Outlook.Application")
+
+    Set Email = objeto_outlook.createitem(0)
+    
+    Email.display
+    
+    Email.to = Cells(Linha, 3).Value
+    Email.cc = Cells(Linha, 4).Value
+    Email.bcc = Cells(Linha, 5).Value
+    
+    Email.Subject = Cells(Linha, 6).Value
+    
+    Email.Body = Cells(Linha, 2).Value & "," & Chr(10) & Chr(10) & Chr(10) & Chr(10) & "Abraços," & Chr(10) & "Luiz Castro"
+    
+    Email.Attachments.Add
+    
+    
+     
+    
+Resume Next
+End If
+
+Linha = Linha + 1
+Loop
+
+End Sub
