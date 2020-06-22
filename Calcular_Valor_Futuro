@@ -1,0 +1,46 @@
+Sub VF_C6()
+
+Dim strName As String
+Dim strName2 As String
+Dim strName3 As String
+
+Dim new_value As Double
+Dim new_value2 As Double
+Dim new_value3 As Double
+Dim new_value4 As Double
+
+
+strName = InputBox("Insira o VP", "VP", "0")
+If IsNumeric(strName) Then
+    new_value = CDbl(strName)
+    Range("A2") = strName
+Else
+    MsgBox "Valor inválido no campo VP"
+    Exit Sub
+End If
+
+strName2 = InputBox("Insira o NPER", "NPER", "0")
+If IsNumeric(strName2) Then
+    new_value2 = CDbl(strName2)
+    Range("B2") = strName2
+Else
+    MsgBox "Valor inválido no campo NPER"
+    Exit Sub
+End If
+
+strName3 = InputBox("Insira a Taxa", "Taxa", "0")
+If IsNumeric(strName3) Then
+    new_value3 = CDbl(strName3)
+    Range("C2") = strName3
+Else
+    MsgBox "Valor inválido no campo Taxa"
+    Exit Sub
+End If
+
+new_value4 = new_value * (1 + (new_value3 / 100)) ^ new_value2
+
+Range("D2") = new_value4
+
+MsgBox "O calculo foi " + strName + " * (1+(" + strName3 + "/100))^" + strName2 + " = " + CStr(new_value4)
+
+End Sub
