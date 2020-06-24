@@ -1,0 +1,29 @@
+Sub Inserir_Registros()
+'
+' Inserir_Registros Macro
+'
+
+Application.ScreenUpdating = False
+    
+    Range("G8").Value = ""
+    Range("B5:G5").Select
+    Selection.Copy
+    Sheets("Planilha1").Select
+    
+    Range("A1048576").Select
+    Selection.End(xlUp).Select
+    
+    
+    ActiveCell.Offset(1, 0).Select
+    
+    ActiveSheet.Paste
+    Sheets("Cadastro 1").Select
+    Range("B5:G5").Select
+    Application.CutCopyMode = False
+    Selection.ClearContents
+    MsgBox "Processo concluído", vbOKOnly, "Concluído"
+    Range("B5").Select
+    
+Application.ScreenUpdating = True
+
+End Sub
