@@ -1,0 +1,73 @@
+Sub InserirDadosClientes()
+'
+' InserirDadosClientes Macro
+'
+
+'
+    Application.ScreenUpdating = False
+    
+    Sheets("Cadastro Mod. 2").Select
+    
+    Range("B5").Select
+    Selection.Copy
+    Sheets("Clientes").Select
+    Range("A1").Select
+    Selection.End(xlDown).Select
+    Selection.End(xlDown).Select
+    Selection.End(xlUp).Select
+    
+    ActiveCell.Offset(1, 0).Select
+    
+    ActiveSheet.Paste
+    ActiveSheet.Previous.Select
+    Range("D5").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    ActiveSheet.Next.Select
+    ActiveCell.Offset(0, 2).Select
+    ActiveSheet.Paste
+    ActiveSheet.Previous.Select
+    Range("F5").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    ActiveSheet.Next.Select
+    ActiveCell.Offset(0, 2).Select
+    
+    ActiveSheet.Paste
+    ActiveSheet.Previous.Select
+    Range("B8").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    ActiveSheet.Next.Select
+    ActiveCell.Offset(0, -3).Select
+    
+    ActiveSheet.Paste
+    ActiveSheet.Previous.Select
+    Range("D8").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    ActiveSheet.Next.Select
+    ActiveCell.Offset(0, 2).Select
+    
+    ActiveSheet.Paste
+    ActiveSheet.Previous.Select
+    Range("F8").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    ActiveSheet.Next.Select
+    ActiveCell.Offset(0, 2).Select
+    
+    ActiveSheet.Paste
+    ActiveSheet.Previous.Select
+    Range("B5,D5,F5,B8,D8,F8").Select
+    Range("F8").Activate
+    Application.CutCopyMode = False
+    Selection.ClearContents
+    Range("B5").Select
+    
+    MsgBox "Processo concluído", vbOKOnly, "Concluído"
+    
+    Application.ScreenUpdating = True
+    
+End Sub
+
