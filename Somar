@@ -1,0 +1,37 @@
+Private Sub CommandButton1_Click()
+
+Dim Resultado As Long
+Dim W         As Worksheet
+
+'Iniciar a variável W
+
+Set W = Sheets("Planilha1")
+Resultado = 0
+
+W.Select
+W.Range("A1").Select
+
+'Estrutura de Repetição
+'Do .... While
+'Faça .. Enquanto
+
+Do While ActiveCell.Value <> ""
+
+'Instruções
+'------------------------------
+
+    Resultado = Resultado + ActiveCell.Value
+    
+    'Pula para a proxíma célula
+
+    ActiveCell.Offset(1, 0).Select
+
+Loop
+
+
+     ActiveCell.Value = "O resulta é: " & Resultado
+        
+    'MsgBox "A soma é:" & Resultado
+    
+    
+End Sub
